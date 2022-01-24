@@ -16,6 +16,7 @@ class LoginScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Center(
             child: CustomCard(
+              color: CustomColors.blanco,
               child: Column(
                 children: [
                   Image.asset('lib/Utils/Images/logo.png'),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class LoginService extends ChangeNotifier {
-  final String _baseUrl = 'http://192.168.123.10:8001/api/';
+  final String _baseUrl = 'http://192.168.1.100:8000/api/';
 
   Future<String?> login(String user, String password) async {
     final Map<String, dynamic> bodyData = {
@@ -17,9 +17,9 @@ class LoginService extends ChangeNotifier {
       body: json.encode(bodyData),
       headers: <String, String>{"Content-Type": "application/json"},
     );
-    print(resp);
     final Map<String, dynamic> decodeResp = json.decode(resp.body);
-    if (decodeResp['type'] == 'success') {
+    // print(decodeResp);
+    if (decodeResp['message'] == 'Usuario existe') {
       return null;
     } else {
       return decodeResp['message'];

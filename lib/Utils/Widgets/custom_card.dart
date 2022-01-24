@@ -3,7 +3,9 @@ import 'package:activos_fijos_app/Utils/Styles/custom_colors.dart';
 
 class CustomCard extends StatelessWidget {
   final Widget child;
-  const CustomCard({Key? key, required this.child}) : super(key: key);
+  final Color color;
+  const CustomCard({Key? key, required this.child, required this.color})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +20,7 @@ class CustomCard extends StatelessWidget {
   }
 
   BoxDecoration _cardShape() => BoxDecoration(
-          color: CustomColors.gris_60,
+          color: color,
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
